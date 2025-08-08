@@ -4,7 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test ./WebAPIPart2.spec.js --headed"
+  "test": "npx playwright test",
+  "test:chrome": "npx playwright test --project=Chrome",
+  "test:safari": "npx playwright test --project=Safari",
+  "test:headed": "npx playwright test --headed",
+  "test:report": "npx playwright show-report",
+  "test:allure:generate": "allure generate ./allure-results --clean",
+  "test:allure:open": "allure open",
+  "test:single": "npx playwright test"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +19,8 @@
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.54.1",
-    "@types/node": "^24.0.14"
+    "@types/node": "^24.0.14",
+    "allure-playwright": "^3.3.3"
   },
   "dependencies": {
     "exceljs": "^4.4.0"
