@@ -15,9 +15,11 @@ const path = require('path');
  */
 export default defineConfig({
   testDir: './tests',
-  retries: 1, // Retry failed tests once
+  retries: 0, // Retry failed tests once
+  workers: 1, // Run tests in a single worker
   
-  reporter: [['html']],
+
+  reporter: [['html'], ['allure-playwright']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   projects: [
     {

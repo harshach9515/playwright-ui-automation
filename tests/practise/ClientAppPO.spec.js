@@ -8,8 +8,10 @@ const testData = JSON.parse(JSON.stringify(require("../utils/testdata.json")));
 const path = require('path');               // <-- Required for path.join
 const fs = require('fs');             // <-- Required for file system operations
 
+test.describe.configure({ mode: 'parallel' }); // Ensure tests run in parallel
 
-test.only("End To End Flow - Order status page", async ({ browser }) => {
+
+test("End To End Flow - Order status page", async ({ browser }) => {
 
     // --------- Browser & Page Setup ---------
     const context = await browser.newContext();
@@ -58,4 +60,10 @@ test.only("End To End Flow - Order status page", async ({ browser }) => {
     await context.close();
     await browser.close();
     console.log("Test completed successfully");
+});
+
+test("test one", async ({ browser }) => {
+});
+
+test("test two", async ({ browser }) => {
 });

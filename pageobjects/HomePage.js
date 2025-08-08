@@ -8,7 +8,7 @@ class HomePage {
         this.page = page;
         this.homePage = page.locator("button[routerlink='/dashboard/']");
         this.products = page.locator("div.card-body");
-        this.cart = page.locator("bbbutton[routerlink='/dashboard/cart']");
+        this.cart = page.locator("button[routerlink='/dashboard/cart']");
     }
 
     async verifyHomePage() {
