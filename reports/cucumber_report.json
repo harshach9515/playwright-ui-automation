@@ -1,0 +1,169 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "ecommerce-validation;validate-the-clientapppo-page",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Validate the ClientAppPO page",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I navigate to the Ecommerce Application with \"harshachalla85@gmail.com\" and \"Hvr@12345\"",
+            "match": {
+              "location": "file:/Users/harshavardhanareddychalla/IdeaProjects/automation-frameworks/playwright-js/features/step_definitions/steps.js:15"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 396749,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'navigate')\n    at World.<anonymous> (file:///Users/harshavardhanareddychalla/IdeaProjects/automation-frameworks/playwright-js/features/step_definitions/steps.js:16:26)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I add \"ZARA COAT 3\" to CartPage",
+            "match": {
+              "location": "file:/Users/harshavardhanareddychalla/IdeaProjects/automation-frameworks/playwright-js/features/step_definitions/steps.js:20"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 7,
+            "name": "I should see \"ZARA COAT 3\" in the CartPage",
+            "match": {
+              "location": "file:/Users/harshavardhanareddychalla/IdeaProjects/automation-frameworks/playwright-js/features/step_definitions/steps.js:25"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "I enter valid details and Place the order",
+            "match": {
+              "location": "file:/Users/harshavardhanareddychalla/IdeaProjects/automation-frameworks/playwright-js/features/step_definitions/steps.js:32"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "I should verify the order details in the Order history page",
+            "match": {
+              "location": "file:/Users/harshavardhanareddychalla/IdeaProjects/automation-frameworks/playwright-js/features/step_definitions/steps.js:47"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 10,
+            "name": "I click on the \"Logout\" button",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I should be logged out successfully",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Regression",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "ecommerce-validation",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Ecommerce Validation",
+    "tags": [],
+    "uri": "features/Ecommerce.feature"
+  },
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "error-validations;validate-the-error-validations-page",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "Validate the Error Validations page",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "I navigate to the Ecommerce2 Application with \"<username>\" and \"<password>\"",
+            "match": {
+              "location": "file:/Users/harshavardhanareddychalla/IdeaProjects/automation-frameworks/playwright-js/features/step_definitions/steps.js:57"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 91333,
+              "error_message": "TypeError: Cannot read properties of undefined (reading 'navigate')\n    at World.<anonymous> (file:///Users/harshavardhanareddychalla/IdeaProjects/automation-frameworks/playwright-js/features/step_definitions/steps.js:58:26)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 6,
+            "name": "Verify Error message is displayed",
+            "match": {
+              "location": "file:/Users/harshavardhanareddychalla/IdeaProjects/automation-frameworks/playwright-js/features/step_definitions/steps.js:66"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Validation",
+            "line": 3
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "error-validations",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Error Validations",
+    "tags": [],
+    "uri": "features/ErrorValidations.feature"
+  }
+]

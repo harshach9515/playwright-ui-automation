@@ -1,13 +1,11 @@
-import { Page } from "@playwright/test";
+
 
 class LoginPage {
+    
 
-   /**
-   * @param {Page} page
-   */
     constructor(page) {
         this.page = page;
-        this.userName = page.locator("#userEmail");
+        this.userName = page.locator("#userEmail"); 
         this.password = page.locator("#userPassword");
         this.loginBtn = page.locator("#login");
     }

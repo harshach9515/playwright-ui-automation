@@ -1,4 +1,5 @@
-const {test} = require("@playwright/test");
+import { test, expect } from '@playwright/test';
+
 
 test("Place Order", async({page}) => {
     await page.route("",

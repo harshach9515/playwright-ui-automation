@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
-const path = require('path');
+import path from 'path';
+
 
 /**
  * Read environment variables from file.
@@ -17,7 +18,7 @@ export default defineConfig({
   testDir: './tests',
   retries: 0, // Retry failed tests once
   workers: 1, // Run tests in a single worker
-  
+  timeout: 60000, // Set a timeout of 60 seconds for each test
 
   reporter: [['html'], ['allure-playwright']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */

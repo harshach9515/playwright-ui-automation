@@ -1,10 +1,11 @@
-const { expect } = require("@playwright/test");
-const { log } = require("console");
+import { expect } from '@playwright/test';
+import { log } from 'console';
+
 
 let token;
 let orderID;
 
-class APIUtils {
+export class APIUtils {
     constructor(apiContext, loginPayload) {
         this.apiContext = apiContext;
         this.loginPayload = loginPayload;
@@ -40,4 +41,4 @@ class APIUtils {
         return orderID;
     }
 }
-module.exports = { APIUtils };
+export default APIUtils;

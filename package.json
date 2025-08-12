@@ -1,26 +1,32 @@
 {
+  "type": "module",
   "name": "playwright",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test": "npx playwright test",
-  "test:chrome": "npx playwright test --project=Chrome",
-  "test:safari": "npx playwright test --project=Safari",
-  "test:headed": "npx playwright test --headed",
-  "test:report": "npx playwright show-report",
-  "test:allure:generate": "allure generate ./allure-results --clean",
-  "test:allure:open": "allure open",
-  "test:single": "npx playwright test"
+    "test": "npx playwright test",
+    "test:chrome": "npx playwright test --project=Chrome",
+    "test:safari": "npx playwright test --project=Safari",
+    "test:headed": "npx playwright test --headed",
+    "test:report": "npx playwright show-report",
+    "test:allure:generate": "allure generate ./allure-results --clean",
+    "test:allure:open": "allure open",
+    "test:single": "npx playwright test",
+    "test:cucumber": "cucumber-js --require features/step_definitions/**/*.js --format json:reports/cucumber_report.json",
+    "test:cucumber:report": "node reports/generate-report.js",
+    "test:cucumber:all": "npm run test:cucumber && npm run test:cucumber:report"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
+    "@azure/microsoft-playwright-testing": "^1.0.0-beta.7",
     "@playwright/test": "^1.54.1",
     "@types/node": "^24.0.14",
-    "allure-playwright": "^3.3.3"
+    "allure-playwright": "^3.3.3",
+    "cucumber-html-reporter": "^7.2.0",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "exceljs": "^4.4.0"

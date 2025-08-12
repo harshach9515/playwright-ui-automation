@@ -1,4 +1,5 @@
-const Excel = require('exceljs')
+import Excel from 'exceljs';
+
 
 const fileName = "C:/framework/nemo-ui-automaion-wdio/data/testdata.xlsx";
 

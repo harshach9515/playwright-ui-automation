@@ -1,0 +1,9 @@
+Product Count : 3
+Cart Page is loaded: ZARA COAT 3
+Order Number:  | 689a78e06f585eb60d7057b7 | 
+OrderID:  | 689a78e06f585eb60d7057b7 | 
+Order History Page Loaded Successfully
+Order rows found: 7
+Checking Order ID: 689a78e06f585eb60d7057b7
+Order Id Found! 689a78e06f585eb60d7057b7
+Test completed successfully

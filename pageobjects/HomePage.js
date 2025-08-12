@@ -1,4 +1,4 @@
-import { Page, expect } from "@playwright/test";
+import { expect } from "@playwright/test";
 
 class HomePage {
     /**
@@ -29,7 +29,7 @@ class HomePage {
         for (let i = 0; i < count; ++i) {
             const productTitle = await this.products.nth(i).locator("b").textContent();
             if (productTitle && productTitle.trim() === productName) {
-                const addToCartBtn = this.products.nth(i).locator("text=Add To Cart");
+                const addToCartBtn = await this.products.nth(i).locator("text=Add To Cart");
                 await addToCartBtn.waitFor({ state: 'visible', timeout: 3000 });
                 await addToCartBtn.click();
                 // Optionally, wait for a toast or cart update here
