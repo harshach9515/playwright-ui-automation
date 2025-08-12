@@ -25,7 +25,7 @@ steps:
     scriptType: 'pscore'
     scriptLocation: 'inlineScript'
     inlineScript: |
-      npx playwright test ClientAppPO.spec.js -c playwright.service.config.ts --workers=1
+      npx playwright test ClientAppPO.spec.js -c playwright.service.config.ts
     addSpnToEnvironment: true
 
 - task: PublishPipelineArtifact@1
