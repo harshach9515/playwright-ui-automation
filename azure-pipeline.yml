@@ -1,30 +1,36 @@
 # azure-pipeline.yml
-# This pipeline is configured to run Playwright tests in parallel using Azure DevOps.
+# This pipeline runs Playwright tests in parallel using Azure DevOps.
+
+trigger:
+- main  # or your branch name
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
 - task: PowerShell@2
-  enabled: true
   displayName: "Install dependencies"
   inputs:
     targetType: 'inline'
     script: 'npm ci'
-    workingDirectory: tests/ # update accordingly
+    workingDirectory: 'tests/' # update accordingly
 
 - task: AzureCLI@2
-  displayName: Run Playwright Test  
+  displayName: "Run Playwright Test"
   env:
-  PLAYWRIGHT_SERVICE_URL: $(PLAYWRIGHT_SERVICE_URL)
-    # PLAYWRIGHT_SERVICE_ACCESS_TOKEN: $(PLAYWRIGHT_SERVICE_ACCESS_TOKEN) # Not recommended, use Microsoft Entra ID authentication. 
-
+    PLAYWRIGHT_SERVICE_URL: $(PLAYWRIGHT_SERVICE_URL)
+    # PLAYWRIGHT_SERVICE_ACCESS_TOKEN: $(PLAYWRIGHT_SERVICE_ACCESS_TOKEN) # Not recommended, use Microsoft Entra ID authentication.
   inputs:
-    azureSubscription: 'playwrighttestts' # Service connection used to authenticate this pipeline with Azure to use the service
+    azureSubscription: 'playwrighttestts' # Service connection for Azure authentication
     scriptType: 'pscore'
     scriptLocation: 'inlineScript'
     inlineScript: |
       npx playwright test ClientAppPO.spec.js -c playwright.service.config.ts --workers=20
-  addSpnToEnvironment: true
+    addSpnToEnvironment: true
 
 - task: PublishPipelineArtifact@1
-  displayName: Upload Playwright report
+  displayName: "Upload Playwright report"
   inputs:
-    targetPath: tests/playwright-report/ # update accordingly
+    targetPath: 'tests/playwright-report/' # update accordingly
     artifact: 'Playwright tests'
     publishLocation: 'pipeline'
